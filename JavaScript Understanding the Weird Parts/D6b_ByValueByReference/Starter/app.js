@@ -22,3 +22,19 @@ c.greeting = 'hello';
 
 console.log(c); // hello
 console.log(d); // hello
+
+// by reference (even as parameters)
+function changeGreeting(obj) {
+  obj.greeting = 'Hola'; // mutate
+}
+
+changeGreeting(d);
+console.log(c); // Hola
+console.log(d); // Hola
+
+// equals operator sets up new memory space (new address)
+c = {
+  greeting: 'howdy',
+};
+console.log(c); // howdy
+console.log(d); // Hola
