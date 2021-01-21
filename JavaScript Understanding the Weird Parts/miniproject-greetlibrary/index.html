@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mini project - greeting</title>
+    <style>
+      * {
+        margin: 0;
+        top: 0;
+        list-style: none;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        /* display: flex; */
+      }
+      input,
+      select {
+        border: none;
+        border-radius: 5px;
+      }
+      textarea:focus,
+      input:focus,
+      select:focus {
+        outline: none;
+      }
+      input[type='button'] {
+        background-color: #fff;
+        color: #000;
+        transition: none;
+      }
+      input[type='button']:hover {
+        background-color: #aaa;
+        color: #fff;
+        transition: ease all 0.3s;
+      }
+      h1 {
+        color: #000;
+      }
+      #logindiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 400px;
+
+        margin: auto;
+        padding: 30px 0;
+        background-color: #ccc;
+        box-shadow: 0px 0px 10px #333;
+        /* offset x, y, blur-radius, color */
+        /* offset x, y, blur-radius, spread-radius, color  */
+      }
+      #logindiv form {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      #logindiv form label,
+      #logindiv form > input {
+        margin: 5px 0;
+      }
+      #logindiv form > input {
+        font-size: 18px;
+        padding: 5px 0;
+        padding-left: 10px;
+      }
+      #logindiv form #loginselectdiv {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      #logindiv form #loginselectdiv select,
+      #logindiv form #loginselectdiv #login {
+        /* display: inline; */
+        width: 100%;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logindiv">
+      <form action="">
+        <label for="firstName">First name: </label>
+        <input type="text" id="firstName" />
+        <label for="lastName">Last name: </label>
+        <input type="text" id="lastName" />
+        <div id="loginselectdiv">
+          <select id="lang">
+            <option value="zh-tw">Taiwanese</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+          </select>
+          <input type="button" value="login" id="login" />
+        </div>
+      </form>
+    </div>
+    <h1>Welcome</h1>
+    <h1 id="greeting"></h1>
+
+    <script src="./jquery-3.5.1.js"></script>
+    <script src="./Greetr.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
