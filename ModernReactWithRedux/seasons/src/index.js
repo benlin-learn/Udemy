@@ -14,23 +14,15 @@ class App extends React.Component {
       lat: null,
       errorMessage: ''
     };
-
+  }
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      (position) => {
-        // we called setState !
-        this.setState({
-          lat: position.coords.latitude
-        });
+      // we called setState !
+      (position) => this.setState({ lat: position.coords.latitude }),
 
-        // we did not !!
-        // this.state.lat = position.coords.latitude;
-      },
-      (err) => {
-        this.setState({
-          errorMessage: err.message
-        });
-        // console.log(err);
-      }
+      // we did not !!
+      // this.state.lat = position.coords.latitude;
+      (err) => this.setState({ errorMessage: err.message })
     );
   }
   // React says we hove to define render!
