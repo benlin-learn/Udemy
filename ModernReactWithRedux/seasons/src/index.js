@@ -6,6 +6,8 @@ import 'semantic-ui-css/semantic.min.css';
 
 import SeasonDisplay from './SeasonDisplay';
 
+import Spinner from './Spinner';
+
 if (module.hot) {
   module.hot.accept();
 }
@@ -46,12 +48,7 @@ class App extends React.Component {
     }
 
     // don't have error and also don't have latitude
-    return (
-      <div>
-        <i className='spinner loading icon'></i>
-        Loading ...
-      </div>
-    );
+    return <Spinner message='Please accept location request ...' />;
 
     // course didn't cover the following condition
     // "hove both error and latitude"
