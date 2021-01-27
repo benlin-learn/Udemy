@@ -1,20 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// CORS error icon not loading
+import 'semantic-ui-css/semantic.min.css';
+
+import SeasonDisplay from './SeasonDisplay';
+
 if (module.hot) {
   module.hot.accept();
 }
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    // THIS IS THE ONLY TIME we do direct assignment to this.state
-    this.state = {
-      lat: null,
-      errorMessage: ''
-    };
-  }
+  //   // THIS IS THE ONLY TIME we do direct assignment to this.state
+  //   this.state = {
+  //     lat: null,
+  //     errorMessage: ''
+  //   };
+  // }
+
+  // totally the same as constructor one
+  state = { lat: null, errorMessage: '' };
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       // we called setState !
@@ -33,11 +41,17 @@ class App extends React.Component {
     }
     // do not have error and hove latitude
     if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>;
+      // return <div>Latitude: {this.state.lat}</div>;
+      return <SeasonDisplay lat={this.state.lat} />;
     }
 
     // don't have error and also don't have latitude
-    return <div>Loading ...</div>;
+    return (
+      <div>
+        <i className='spinner loading icon'></i>
+        Loading ...
+      </div>
+    );
 
     // course didn't cover the following condition
     // "hove both error and latitude"
