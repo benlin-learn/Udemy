@@ -4,12 +4,18 @@ import SearchBar from './SearchBar';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: null };
+    this.state = { searchTerm: '' };
   }
+  onSearchSubmit = (term) => {
+    console.log(term);
+    this.setState({ searchTerm: term });
+  };
+
   render() {
     return (
       <div className='ui container' style={{ marginTop: '10px' }}>
-        <SearchBar />
+        <SearchBar onSubmit={this.onSearchSubmit} />
+        <h1>{this.state.searchTerm}</h1>
       </div>
     );
   }
