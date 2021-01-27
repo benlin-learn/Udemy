@@ -35,8 +35,8 @@ class App extends React.Component {
       (err) => this.setState({ errorMessage: err.message })
     );
   }
-  // React says we hove to define render!
-  render() {
+
+  renderContent() {
     // have error and do not hove latitude
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
@@ -59,6 +59,13 @@ class App extends React.Component {
     // }
 
     // might help
+  }
+
+  // React says we hove to define render!
+  render() {
+    // 如果要在所有內容都能在顯示時有紅色邊框，可以把內容都提取出來，一起加然後再呼叫，就不用一個一個單獨處理 (p.s. className ="border red" 只是示範，沒有該 css 設定)
+
+    return <div className='border red'>{this.renderContent()}</div>;
   }
 }
 
