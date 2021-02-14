@@ -8,7 +8,7 @@ const Search = () => {
 
   const [results, setResults] = useState([]);
 
-  // run first render or 'term' change
+  // run when component first render or 'term' change
   useEffect(() => {
     const timerId = setTimeout(() => {
       setDebouncedTerm(term);
@@ -32,6 +32,7 @@ const Search = () => {
           srsearch: debouncedTerm
         }
       });
+
       setResults(data.query.search);
     };
     search();
