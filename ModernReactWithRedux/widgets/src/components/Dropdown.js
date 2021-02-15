@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -20,7 +20,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     );
 
     return () => {
-      console.log('removeEventListener');
+      // console.log('removeEventListener');
       document.body.removeEventListener('click', onBodyClick);
     };
   }, []);
@@ -43,12 +43,12 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
       </div>
     );
   });
-  console.log(ref.current);
+  // console.log(ref.current);
 
   return (
     <div ref={ref} className='ui form'>
       <div className='field'>
-        <label className='label'>Select a Color</label>
+        <label className='label'>{label}</label>
       </div>
       <div
         onClick={() => {
@@ -63,11 +63,6 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
           {renderedOptions}
         </div>
       </div>
-      {/* <select name='color' id='color' onChange={onColor()}>
-        <option value='red'>Red</option>
-        <option value='green'>Green</option>
-        <option value='blue'>Blue</option>
-      </select> */}
 
       <div className=''>This text is {selected.value}</div>
     </div>

@@ -2,22 +2,23 @@ import React, { useState } from 'react';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 
 // Accordion
-const items = [
-  {
-    title: 'What is React?',
-    content: 'React is a front end javascript framework'
-  },
-  {
-    title: 'Why use React?',
-    content: 'React is a favorite JS library among engineers'
-  },
-  {
-    title: 'How do you use React?',
-    content: 'You use React by creating components'
-  }
-];
+// const items = [
+//   {
+//     title: 'What is React?',
+//     content: 'React is a front end javascript framework'
+//   },
+//   {
+//     title: 'Why use React?',
+//     content: 'React is a favorite JS library among engineers'
+//   },
+//   {
+//     title: 'How do you use React?',
+//     content: 'You use React by creating components'
+//   }
+// ];
 
 // Dropdown
 const options = [
@@ -25,29 +26,29 @@ const options = [
   { label: 'The Color Green', value: 'green' },
   { label: 'A Shade of Blue', value: 'blue' }
 ];
-// const onColor = (color) => {
-//   console.log(color);
-// };
 
 const App = () => {
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
+  // const [selected, setSelected] = useState(options[0]);
+  // const [showDropdown, setShowDropdown] = useState(true);
 
   return (
     <div>
       {/* <Accordion items={items} /> */}
-      <Search />
-      <button onClick={() => setShowDropdown(!showDropdown)}>
+      {/* <Search /> */}
+
+      {/* dropdown */}
+      {/* <button onClick={() => setShowDropdown(!showDropdown)}>
         Toggle Dropdown
       </button>
-
       {showDropdown && (
         <Dropdown
           selected={selected}
           onSelectedChange={setSelected}
           options={options}
         />
-      )}
+      )} */}
+
+      <Translate />
     </div>
   );
 };
