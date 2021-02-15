@@ -1,0 +1,22 @@
+.video-item {
+  display: flex !important;
+  align-items: center;
+  cursor: pointer;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.video-item-content .header {
+  padding: 5px;
+}
+.video-item.item img {
+  max-width: 180px;
+}
