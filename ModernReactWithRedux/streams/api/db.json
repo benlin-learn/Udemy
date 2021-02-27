@@ -1,0 +1,33 @@
+{
+  "streams": [
+    {
+      "title": "My Streams",
+      "description": "This is a great stream!",
+      "id": 1
+    },
+    {
+      "title": "I created this stream 123132123456433",
+      "description": "This was made by me!123s",
+      "userId": "103954968571806341517",
+      "id": 4
+    },
+    {
+      "title": "Unexpected Behavior",
+      "description": "Didn't expect that! 123123",
+      "userId": "103954968571806341517",
+      "id": 5
+    },
+    {
+      "title": "Programmatic Navigation",
+      "description": "You should not see this on the form page !!",
+      "userId": "103954968571806341517",
+      "id": 6
+    },
+    {
+      "title": "ME Streaming Component Reuse!",
+      "description": "Watch me refactor some components.",
+      "userId": "103954968571806341517",
+      "id": 7
+    }
+  ]
+}
