@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
 import { fetchStream, editStream } from '../../actions';
 import StreamForm from './StreamForm';
 
@@ -11,7 +10,7 @@ class StreamEdit extends Component {
   }
 
   onSubmit = (formValues) => {
-    console.log(formValues);
+    // console.log(formValues);
     this.props.editStream(this.props.match.params.id, formValues);
   };
 
